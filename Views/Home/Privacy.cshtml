@@ -1,0 +1,50 @@
+﻿@model destinocerto.Models.Usuariodatabase
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    body{
+        background-color: #ffb703;
+        
+        
+            }
+    .bx1{
+        transform: translateX(400px)translateY(50px);
+        width: 300px;
+        height: 400px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+    .b2{
+        width: 80px;
+        height: 40px;
+        transform: translateY(40px);
+        background-color: black;
+        color: #ffb703;
+        border-radius: 5px;
+        border: solid 1px whitesmoke;
+    }
+    form{
+        color: #ffb703;
+    }
+    form input{
+        border: none;
+        border-radius: 5px;
+    }
+</style>
+<div class="bx1">
+    <img clsa src="~/img/login.png">
+    <form method="post" asp-controller="Home" asp-action="CadPacote">
+        <p>Usuario</p>
+      @Html.TextBoxFor(m => m.Nome)
+       <p>Senha</p>
+      @Html.TextBoxFor(m => m.senha)
+        <button type="submit" class="b2">Cadastrar</button>
+    </form>
+    
+</div>

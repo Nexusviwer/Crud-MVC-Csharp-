@@ -1,0 +1,156 @@
+@model IEnumerable<Usuariodatabase>
+   @{
+Layout = null;
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width"/>
+<title>Index</title>
+</head>
+<body>
+    <header>
+      <nav>
+        <ul class="menu">
+            
+            <li><a class="ai" asp-area="" asp-controller="Usuario" asp-action="Cadastrar">Cadastrar</a></li>
+            <li><a class="ai" asp-area="" asp-controller="Usuario" asp-action="Deletar">Deletar</a></li>
+            <a class="titulo" asp-area="" asp-controller="Usuario" asp-action="Listar">destinocerto</a>
+            <li><a class="ai" asp-area="" asp-controller="Usuario" asp-action="Editar">Editar</a></li>
+            <li><a class="ai" asp-area="" asp-controller="Usuario" asp-action="Listar">Listar</a></li>
+            <li><a class="ai" asp-area="" asp-controller="Home" asp-action="index">Logout</a></li>
+
+        </ul>
+      </nav>
+    </header>
+    <main>
+            <style>
+    body{
+        background-color: #ffb703;
+        padding: 0;
+        margin: 0;
+       
+        
+            }
+            header{
+                height: 10vh;
+                width: 100%;
+                background-color: #FFFFFF;
+                margin-top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    .bx1{
+       
+        width: 300px;
+        height: 400px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+    .b2{
+        width: 80px;
+        height: 40px;
+        transform: translateY(40px);
+        background-color: black;
+        color: #ffb703;
+        border-radius: 5px;
+        border: solid 1px whitesmoke;
+    }
+    form{
+        color: #ffb703;
+    }
+    form input{
+        border: none;
+        border-radius: 5px;
+    }
+    .menu{
+         
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .menu li{
+        list-style: none;
+    }
+    .ai{
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .titulo{
+       
+        font-size: 22px;
+        text-decoration: none;
+        color: black;
+    }
+    main{
+         display: flex;
+         height: 90vh;
+         width: 100%;
+         flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
+    table{
+        color: white;
+    }
+    table a{
+        text-decoration: none;
+        color: #ffb703;
+    }
+     .cadpacote{
+       
+        text-decoration: none;
+        color: #ffb703;
+    }
+    .cd2{
+         transform: translateX(300px) translateY(180px);
+         position: absolute;
+        width: 200px;
+        height: 30px;
+        background-color: black;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+           }
+     </style>
+      <h2>Listagem de Usuarios</h2>
+     <div class="bx1">
+      <table>
+        <thead>
+            <th>Id</th>
+          <th>Nome</th>
+          <th>Senha</th>
+        </thead>
+        @foreach (Usuariodatabase u in Model)
+        {
+            <tr>
+                <td>@u.Id</td>
+                 <td>@u.Nome</td>
+                  <td>@u.senha</td>
+                <td>
+                    <a href="/Usuario/Editar?ID=@u.Id">Editar</a>
+                    <a href="/Usuario/Deletar">Deletar</a>
+                </td>
+            </tr>
+        }
+         <tbody>
+
+         </tbody>
+      </table>
+      </div>
+       <div class="cd2">
+   <a class="cadpacote" asp-area="" asp-controller="PacotesTuristicos" asp-action="LiPacote">Listar Pacotes</a>
+   </div>
+    </main>
+</body>
+ 

@@ -1,0 +1,148 @@
+@model destinocerto.Models.Usuariodatabase
+
+@{
+Layout = null;
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width"/>
+<title>Index</title>
+</head>
+<body>
+    <header>
+      <nav>
+        <ul class="menu">
+            
+            <li><a class="ai" asp-area="" asp-controller="Usuario" asp-action="Cadastrar">Cadastrar</a></li>
+            <li><a class="ai" asp-area="" asp-controller="Usuario" asp-action="Deletar">Deletar</a></li>
+            <a class="titulo" asp-area="" asp-controller="Usuario" asp-action="Editar">destinocerto</a>
+            <li><a class="ai" asp-area="" asp-controller="Usuario" asp-action="Editar">Editar</a></li>
+            <li><a class="ai" asp-area="" asp-controller="Usuario" asp-action="Listar">Listar</a></li>
+            <li><a class="ai" asp-area="" asp-controller="Home" asp-action="Index">Logout</a></li>
+
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <style>
+    body{
+        background-color: #ffb703;
+        padding: 0;
+        margin: 0;
+        
+            }
+            header{
+                height: 10vh;
+                width: 100%;
+                background-color: #FFFFFF;
+                 display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    .bx1{
+       
+        width: 300px;
+        height: 450px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+    .b2{
+        width: 80px;
+        height: 40px;
+        transform: translateY(40px);
+        background-color: black;
+        color: #ffb703;
+        border-radius: 5px;
+        border: solid 1px whitesmoke;
+    }
+    form{
+         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:5px;
+        color: #ffb703;
+    }
+    form input{
+        border: none;
+        border-radius: 5px;
+    }
+    .menu{
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .menu li{
+        list-style: none;
+    }
+    .ai{
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .titulo{
+       
+        font-size: 22px;
+        text-decoration: none;
+        color: black;
+    }
+    main{
+         display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+         height: 90vh;
+         width: 100%;
+        
+    }
+    p{
+        font-size: 16px;
+    }
+    .cd2{
+         transform: translateX(300px) translateY(180px);
+         position: absolute;
+        width: 200px;
+        height: 30px;
+        background-color: black;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+           }
+             .cadpacote{
+       
+        text-decoration: none;
+        color: #ffb703;
+    }
+     </style>
+      <h2>Edição de Usuarios</h2>
+    <div class="bx1">
+    <img clsa src="~/images/escrever.png">
+    <form method="post" asp-controller="Usuario" asp-action="Editar">
+         <p>Id quem deseja Editar</p>
+           @Html.TextBoxFor(m => m.Id)
+        <p>Usuario</p>
+      @Html.TextBoxFor(m => m.Nome)
+       <p>Senha</p>
+      @Html.TextBoxFor(m => m.senha)
+        
+       <button type="submit" class="b2">Editar</button>
+    </form>
+    
+    
+    </div>
+    <div class="cd2">
+   <a class="cadpacote" asp-area="" asp-controller="PacotesTuristicos" asp-action="EditPacote">Edição de pacotes</a>
+   </div>
+    <h3> @ViewBag.msg</h3>
+    </main>
+</body>

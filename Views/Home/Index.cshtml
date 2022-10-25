@@ -1,0 +1,58 @@
+﻿@model IEnumerable<decpacote>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .cars{
+        width: 400px;
+        height: 400px;
+        background-color: #e9edc9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px
+     
+    }
+    .bx2{
+       display: flex;
+        justify-content: space-around;
+        align-items: center;
+         gap: 30px;
+         
+         
+        
+    }
+    .btnc{
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: #e9edc9;
+        color: black;
+        font-size: 18px;
+    }
+
+</style>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+  <main>
+<div class="bx2">
+@foreach (decpacote u in Model)
+{ 
+    
+
+    <div class="continer">
+       <div class="cars">
+         <img src="">
+         <h2>Pacote</h2>
+         <h6>@u.Nome</h6>
+         <h6>R$:@u.Valor</h6>
+         <button class="btnc" >Comprar</button>
+       </div>
+    </div>
+    <hr>
+}
+</div>
+</main>

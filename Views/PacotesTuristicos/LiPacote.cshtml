@@ -1,0 +1,138 @@
+@model IEnumerable<decpacote>
+   @{
+Layout = null;
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width"/>
+<title>Index</title>
+</head>
+<body>
+    <header>
+      <nav>
+        <ul class="menu">
+            
+            <li><a class="ai" asp-area="" asp-controller="Usuario" asp-action="Cadastrar">Cadastrar</a></li>
+            <li><a class="ai" asp-area="" asp-controller="Usuario" asp-action="Deletar">Deletar</a></li>
+            <a class="titulo" asp-area="" asp-controller="Usuario" asp-action="Cadastrar">destinocerto</a>
+            <li><a class="ai" asp-area="" asp-controller="Usuario" asp-action="Editar">Editar</a></li>
+            <li><a class="ai" asp-area="" asp-controller="Usuario" asp-action="Listar">Listar</a></li>
+            <li><a class="ai" asp-area="" asp-controller="Home" asp-action="Index">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+            <style>
+    body{
+        background-color: #ffb703;
+        padding: 0;
+        margin: 0;
+       
+        
+            }
+            header{
+                height: 10vh;
+                width: 100%;
+                background-color: #FFFFFF;
+                margin-top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    .bx1{
+       
+        width: 300px;
+        height: 400px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+    .b2{
+        width: 80px;
+        height: 40px;
+        transform: translateY(40px);
+        background-color: black;
+        color: #ffb703;
+        border-radius: 5px;
+        border: solid 1px whitesmoke;
+    }
+    form{
+        color: #ffb703;
+    }
+    form input{
+        border: none;
+        border-radius: 5px;
+    }
+    .menu{
+         
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .menu li{
+        list-style: none;
+    }
+    .ai{
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .titulo{
+       
+        font-size: 22px;
+        text-decoration: none;
+        color: black;
+    }
+    main{
+         display: flex;
+         height: 90vh;
+         width: 100%;
+         flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
+    table{
+        color: white;
+    }
+    table a{
+        text-decoration: none;
+        color: #ffb703;
+    }
+     </style>
+      <h2>Listagem de Pacotes</h2>
+     <div class="bx1">
+      <table>
+        <thead>
+            <th>Id</th>
+          <th>Nome</th>
+          <th>Valor</th>
+          <th>Descrição</th>
+        </thead>
+        @foreach (decpacote u in Model)
+        {
+            <tr>
+                <td>@u.Id</td>
+                 <td>@u.Nome</td>
+                  <td>@u.Valor</td>
+                  <td>@u.Descriçao</td>
+                <td>
+                    <a href="/PacotesTuristicos/EditPacote?ID=@u.Id">Editar</a>
+                    <a href="/PacotesTuristicos/DeletePacote">Deletar</a>
+                </td>
+            </tr>
+        }
+         <tbody>
+
+         </tbody>
+      </table>
+      </div>
+    </main>
+</body>
+ 
